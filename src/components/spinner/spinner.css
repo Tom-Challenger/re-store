@@ -1,0 +1,10 @@
+.loader {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.loader .loader-status-bar {
+	font-size: 24px;
+	text-align: center;
+}

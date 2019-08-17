@@ -2,7 +2,7 @@
 const booksLoaded = (newBooks) => {
 	return {
 		type: 'BOOKS_LOADED',
-		payloaded: newBooks
+		payload: newBooks
 	}
 }
 

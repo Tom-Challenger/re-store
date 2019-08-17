@@ -6,6 +6,7 @@ import BookListItem from '../book-list-item'
 
 import { withBookstoreService } from '../hoc'
 import { booksLoaded } from '../../actions'
+import { compose } from '../../utils'
 
 import './book-list.css'
 
@@ -23,7 +24,7 @@ class BookList extends Component {
 	render() {
 		const { books } = this.props;
 		return (
-			<ul>
+			<ul className="book-list">
 				{
 					books.map((book) => {
 						return <li key={book.id}><BookListItem book={book} /></li>
@@ -42,5 +43,8 @@ const mapDispatchToProps = {
 	booksLoaded
 }
 
-export default withBookstoreService()(
-	connect(mapStateToProps, mapDispatchToProps)(BookList))
+export default compose(
+	withBookstoreService(),
+	connect(mapStateToProps, mapDispatchToProps)
+)(BookList)
+

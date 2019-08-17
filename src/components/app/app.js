@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
+import ShopHeader from '../shop-header'
 import { 
 	HomePage,
 	CartPage
@@ -10,8 +11,8 @@ import './app.css'
 
 const App = ({ bookstoreService }) => {
 	return (
-		<div>
-			<span>App</span>
+		<main role="main" className="container">
+			<ShopHeader numItems={5} total={210} />
 			<Switch>
 				<Route path="/" component={HomePage} exact={true} />
 				<Route path="/cart" component={CartPage} />
@@ -19,7 +20,7 @@ const App = ({ bookstoreService }) => {
 				<Route render={() => <h2>Page not found</h2>} />
 				<Redirect to='/' />
 			</Switch>
-		</div>
+		</main>
 	)
 }
 

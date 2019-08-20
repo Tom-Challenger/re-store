@@ -76,17 +76,14 @@ const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onIncrease: (id) => {
-			console.log(`Increase ${id}`)
 			dispatch(bookAddedToCart(id))
 		},
 
 		onDecrease: (id) => {
-			console.log(`Decrease ${id}`)
 			dispatch(bookRemovedFromCart(id))
 		},
 
 		onDelete: (id) => {
-			console.log(`Delete ${id}`)
 			dispatch(allBooksRemovedFromCart(id))
 		}
 	}
